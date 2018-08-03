@@ -1,21 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Boiler Plate</Text>
-      </View>
-    );
-  }
-}
+import HomeComponent from './src/home';
+import ProfileComponent from './src/profile';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const App = StackNavigator({
+  Home: {
+    screen: HomeComponent
   },
-});
+  Profile: {
+    screen: ProfileComponent
+  }
+})
+
+export default App;
