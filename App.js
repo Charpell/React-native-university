@@ -5,6 +5,7 @@ import Nav from './src/Nav/nav';
 import Generate from './src/Generator/generate';
 import ListItem from './src/Generator/listitem';
 import Input from './src/Input/input';
+import PickerComponent from './src/Picker/picker';
 
 export default class App extends React.Component {
   state = {
@@ -50,7 +51,9 @@ export default class App extends React.Component {
           <View style={styles.wrapper}>
             <Generate add={this.onAddRamdom}/>
             <ListItem items={this.state.random} delete={this.onItemDelete}/>
-            <Input />
+            {/* <Input /> */}
+
+           <PickerComponent/>
           </View>
         </ScrollView>
         
