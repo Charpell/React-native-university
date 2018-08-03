@@ -4,7 +4,8 @@ import { StyleSheet, Text, View, TextInput, Button} from 'react-native';
 
 class Input extends Component {
     state = {
-        myInput: " "
+        myInput: " ",
+        users: ['John','James','Francis','Lisa','Martha','Steve']
     }
 
     onChangeInput = (value) =>{
@@ -13,6 +14,14 @@ class Input extends Component {
         })
     }
 
+    onAddUser = () => {
+        this.setState(prevState =>{
+            return {
+                myInput:'',
+                users:[...prevState.users, prevState.myInput]
+            }
+        })
+    }
 
 
     render(){
@@ -28,7 +37,16 @@ class Input extends Component {
                     editable={true}
                     autoCapitalize={'words'}
             />
-       
+            <Button
+                title="Add user"
+                onPress={this.onAddUser}
+            />
+            {
+                this.state.users.map(item => (
+                    <Text style={styles.users} key={item}>{item}</Text>
+                ))
+            }
+
             </View>
 
         )
