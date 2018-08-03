@@ -1,11 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Nav from './src/Nav/nav';
+import Generate from './src/Generator/generate';
+
 export default class App extends React.Component {
+  state = {
+    nameOfApp: "My awesome app is"
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Boiler Plate</Text>
+        <Nav nameOfApp={this.state.nameOfApp} />
+
+        <Generate />
       </View>
     );
   }
@@ -16,6 +25,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    marginTop: 20
   },
 });
