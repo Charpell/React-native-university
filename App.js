@@ -6,6 +6,7 @@ import Generate from './src/Generator/generate';
 import ListItem from './src/Generator/listitem';
 import Input from './src/Input/input';
 import PickerComponent from './src/Picker/picker';
+import ModalComponent from './src/Modal/modal'
 
 export default class App extends React.Component {
   state = {
@@ -62,6 +63,7 @@ export default class App extends React.Component {
               animating={this.state.loading}
             /> 
 
+            <ModalComponent/>
           </View>
         </ScrollView>
         
