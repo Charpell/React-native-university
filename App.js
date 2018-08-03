@@ -1,16 +1,14 @@
-import React from 'react';
-import { StackNavigator } from 'react-navigation';
+import { Navigation } from 'react-native-navigation';
 
-import HomeComponent from './src/home';
-import ProfileComponent from './src/profile';
+import HomeScreen from './src/home';
+import ProfileScreen from './src/profile';
 
-const App = StackNavigator({
-  Home: {
-    screen: HomeComponent
-  },
-  Profile: {
-    screen: ProfileComponent
+Navigation.registerComponent("codingrevolution.HomeScreen", () => HomeScreen);
+Navigation.registerComponent("codingrevolution.ProfileScreen", () => ProfileScreen);
+
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: "codingrevolution.HomeScreen",
+    title: "Home"
   }
 })
-
-export default App;

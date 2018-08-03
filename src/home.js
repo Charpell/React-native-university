@@ -2,21 +2,18 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 class HomeComponent extends Component {
-  static navigationOptions = {
-    title: 'Home'
-  }
-
 
   render () {
-    const { navigate } = this.props.navigation;
-
     return (
       <View>
         <Text>This is home</Text>
         <Button 
-          title="See profile"
+          title="go to profile"
           onPress={() => {
-            navigate('Profile')
+            this.props.navigator.push({
+              screen: "codingrevolution.HomeScreen",
+              title: "Profile"
+            })
           }}
         />
       </View>
