@@ -10,7 +10,7 @@ class PickerComponent extends Component {
 
     handleSliderChange = (value) =>{
         this.setState({
-            value:parseInt(value)
+            value: parseInt(value)
         })
     }
 
