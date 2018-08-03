@@ -11,6 +11,10 @@ const loadTabs = () => {
         label: "Profile",
         title: "Profile",
         icon: HomeIcon,
+        navigatorStyle: {
+            navBarTextColor: 'red',
+            navBarBackgroundColor: 'black'
+        },
         navigatorButtons: {
           leftButtons: [
             {
