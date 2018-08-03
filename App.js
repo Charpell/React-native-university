@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Nav from './src/Nav/nav';
 import Generate from './src/Generator/generate';
 import ListItem from './src/Generator/listitem';
+import Input from './src/Input/input';
 
 export default class App extends React.Component {
   state = {
@@ -25,7 +26,7 @@ export default class App extends React.Component {
     const newArray = this.state.random.filter((item, index)=>{
       return i !== index;
     });
-    
+
     this.setState({
       random: newArray
     })
@@ -40,6 +41,7 @@ export default class App extends React.Component {
 
         <Generate add={this.onAddRamdom}/>
         <ListItem items={this.state.random} delete={this.onItemDelete}/>
+        <Input />
       </View>
     );
   }
