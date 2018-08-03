@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
+import LoadTabs from './tabs';
+
 class HomeComponent extends Component {
 
   render () {
@@ -10,10 +12,7 @@ class HomeComponent extends Component {
         <Button 
           title="go to profile"
           onPress={() => {
-            this.props.navigator.push({
-              screen: "codingrevolution.HomeScreen",
-              title: "Profile"
-            })
+            LoadTabs();
           }}
         />
       </View>
