@@ -3,18 +3,43 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Nav from './src/Nav/nav';
 import Generate from './src/Generator/generate';
+import ListItem from './src/Generator/listitem';
 
 export default class App extends React.Component {
   state = {
-    nameOfApp: "My awesome app is"
+    nameOfApp: "My awesome app is",
+    random: [20, 13]
   }
+
+  onAddRamdom = () => {
+    const random = Math.floor(Math.random() * 100) + 1;
+
+    this.setState(prevState => {
+      return {
+        random: [ ...prevState.random, random] 
+      }
+    })
+ }  
+ 
+  onItemDelete = (i) => {
+    const newArray = this.state.random.filter((item, index)=>{
+      return i !== index;
+    });
+    
+    this.setState({
+      random: newArray
+    })
+  }
+
+
 
   render() {
     return (
       <View style={styles.container}>
         <Nav nameOfApp={this.state.nameOfApp} />
 
-        <Generate />
+        <Generate add={this.onAddRamdom}/>
+        <ListItem items={this.state.random} delete={this.onItemDelete}/>
       </View>
     );
   }
