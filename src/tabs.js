@@ -39,6 +39,21 @@ const loadTabs = () => {
             }
           ]
         }
+      },
+      {
+        screen: "codingrevolution.ContactsComponent",
+        label: "Contacts",
+        title: "Contacts",
+        icon: HomeIcon,
+        navigatorButtons: {
+          leftButtons: [
+            {
+              title: "Drawer",
+              id: "DrawerButton",
+              icon: MenuIcon
+            }
+          ]
+        }
       }
     ],
     drawer: {
